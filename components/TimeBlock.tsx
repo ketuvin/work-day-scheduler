@@ -11,6 +11,11 @@ const TimeBlock: React.FC<TimeBlockProps> = ({ time }) => {
   const { events, setEvent } = useEventStore();
   const [eventDescription, setEventDescription] = useState<string>('');
   const [isEditing, setIsEditing] = useState<boolean>(false);
+  
+  const currentTime = dayjs();
+  const blockTime = dayjs().set('hour', parseInt(time.split(':')[0], 10)).set('minute', 0);
+  const isPast = currentTime.isAfter(blockTime, 'hour');
+  const isPresent = currentTime.isSame(blockTime, 'hour');
 
   useEffect(() => {
     const existingEvent = events.find((event) => event.time === time);
@@ -26,11 +31,6 @@ const TimeBlock: React.FC<TimeBlockProps> = ({ time }) => {
     }
     setIsEditing(false);
   };
-
-  const currentTime = dayjs();
-  const blockTime = dayjs().set('hour', parseInt(time.split(':')[0], 10)).set('minute', 0);
-  const isPast = currentTime.isAfter(blockTime, 'hour');
-  const isPresent = currentTime.isSame(blockTime, 'hour');
 
   return (
     <div className="time-block rounded-md cursor-pointer grid grid-cols-6 md:grid-cols-12 w-full h-20 md:h-32">
