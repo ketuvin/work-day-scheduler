@@ -33,11 +33,11 @@ const TimeBlock: React.FC<TimeBlockProps> = ({ time }) => {
   const isPresent = currentTime.isSame(blockTime, 'hour');
 
   return (
-    <div className="time-block rounded-md cursor-pointer grid grid-cols-12 w-full h-32">
+    <div className="time-block rounded-md cursor-pointer grid grid-cols-6 md:grid-cols-12 w-full h-20 md:h-32">
       <div className="col-span-1 flex items-center justify-end w-full border border-y-1 border-x-0 border-dashed border-black">
-        <span className="font-bold">{time}</span>
+        <span className="font-bold text-xs md:text-base">{time}</span>
       </div>
-      <div className={`col-span-10 border border-white ${isPast ? 'bg-neutral-300' : isPresent ? 'bg-red-400' : 'bg-green-400'}`}>
+      <div className={`col-span-4 md:col-span-10 text-sm md:text-base border border-white ${isPast ? 'bg-neutral-300' : isPresent ? 'bg-red-400' : 'bg-green-400'}`}>
         {isEditing ? (
           <textarea placeholder="Enter event..." value={eventDescription} onChange={(e) => setEventDescription(e.target.value)} className={`border rounded p-2 w-full h-full ${isPast ? 'bg-neutral-300' : isPresent ? 'bg-red-400' : 'bg-green-400'}`} />
         ) : (
