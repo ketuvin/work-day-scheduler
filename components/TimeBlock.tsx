@@ -17,6 +17,7 @@ const TimeBlock: React.FC<TimeBlockProps> = ({ time }) => {
   const isPast = currentTime.isAfter(blockTime, 'hour');
   const isPresent = currentTime.isSame(blockTime, 'hour');
   const timeBlockColor = isPast ? 'bg-neutral-300' : isPresent ? 'bg-red-400' : 'bg-green-400';
+  console.log(isPast);
 
   useEffect(() => {
     const existingEvent = events.find((event) => event.time === time);
