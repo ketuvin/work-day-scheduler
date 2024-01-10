@@ -11,7 +11,7 @@ const TimeBlock: React.FC<TimeBlockProps> = ({ time }) => {
   const { events, setEvent } = useEventStore();
   const [eventDescription, setEventDescription] = useState<string>('');
   const [isEditing, setIsEditing] = useState<boolean>(false);
-  
+
   const currentTime = dayjs();
   const blockTime = dayjs().set('hour', parseInt(time.split(':')[0], 10)).set('minute', 0);
   const isPast = currentTime.isAfter(blockTime, 'hour');
@@ -37,7 +37,7 @@ const TimeBlock: React.FC<TimeBlockProps> = ({ time }) => {
       <div className="col-span-1 flex items-center justify-end w-full border border-y-1 border-x-0 border-dashed border-black">
         <span className="font-bold text-xs md:text-base">{time}</span>
       </div>
-      <div className={`col-span-4 md:col-span-10 text-sm md:text-base border border-white ${isPast ? 'bg-neutral-300' : isPresent ? 'bg-red-400' : 'bg-green-400'}`}>
+      <div className={`${isPast ? 'bg-neutral-300' : isPresent ? 'bg-red-400' : 'bg-green-400'} col-span-4 md:col-span-10 text-sm md:text-base border border-white`}>
         {isEditing ? (
           <textarea placeholder="Enter event..." value={eventDescription} onChange={(e) => setEventDescription(e.target.value)} className={`border rounded p-2 w-full h-full ${isPast ? 'bg-neutral-300' : isPresent ? 'bg-red-400' : 'bg-green-400'}`} />
         ) : (
