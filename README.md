@@ -1,4 +1,4 @@
-# Work Day Scheduler App
+![localhost_3000-GoogleChrome2024-01-1102-17-23-ezgif com-optimize](https://github.com/ketuvin/work-day-scheduler/assets/33052653/5929786e-d5e0-47bf-b8dd-8d7183b24f65)# Work Day Scheduler App
 
 This is a simple work day scheduler app built with Next.js, TypeScript, TailwindCSS and Zustand. This app is developed with mobile responsiveness in mind, ensuring an optimal and user-friendly experience across a variety of screen sizes.
 
@@ -27,4 +27,10 @@ Make sure you have Node.js and npm installed on your machine.
    > npm run dev
 2. Open your browser and visit http://localhost:3000 to view the work day scheduler app.
 
-![localhost_3000 - Google Chrome 2024-01-11 01-38-35](https://github.com/ketuvin/work-day-scheduler/assets/33052653/c5ae066d-dd34-4c74-9740-a4293772fccc)
+## Live
+https://work-day-scheduler-kevin-fuentes-projects.vercel.app/
+
+![localhost_3000-GoogleChrome2024-01-1102-17-23-ezgif com-optimize](https://github.com/ketuvin/work-day-scheduler/assets/33052653/1bc35abf-dcde-4f86-9732-9f7682c3a7fb)
+
+
+
