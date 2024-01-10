@@ -16,6 +16,7 @@ const TimeBlock: React.FC<TimeBlockProps> = ({ time }) => {
   const blockTime = dayjs().set('hour', parseInt(time.split(':')[0], 10)).set('minute', 0);
   const isPast = currentTime.isAfter(blockTime, 'hour');
   const isPresent = currentTime.isSame(blockTime, 'hour');
+  const timeBlockColor = isPast ? 'bg-neutral-300' : isPresent ? 'bg-red-400' : 'bg-green-400';
 
   useEffect(() => {
     const existingEvent = events.find((event) => event.time === time);
@@ -23,11 +24,12 @@ const TimeBlock: React.FC<TimeBlockProps> = ({ time }) => {
   }, [events, time]);
 
   const handleSave = () => {
-    if (eventDescription.trim() === '') {
+    const trimmedDescription = eventDescription.trim();
+    if (!trimmedDescription) {
       // If textarea is empty, clear the event
       setEvent(time, '');
     } else {
-      setEvent(time, eventDescription);
+      setEvent(time, trimmedDescription);
     }
     setIsEditing(false);
   };
@@ -37,9 +39,9 @@ const TimeBlock: React.FC<TimeBlockProps> = ({ time }) => {
       <div className="col-span-1 flex items-center justify-end w-full border border-y-1 border-x-0 border-dashed border-black">
         <span className="font-bold text-xs md:text-base">{time}</span>
       </div>
-      <div className={`${isPast ? 'bg-neutral-300' : isPresent ? 'bg-red-400' : 'bg-green-400'} col-span-4 md:col-span-10 text-sm md:text-base border border-white`}>
+      <div className={`${timeBlockColor} col-span-4 md:col-span-10 text-sm md:text-base border border-white`}>
         {isEditing ? (
-          <textarea placeholder="Enter event..." value={eventDescription} onChange={(e) => setEventDescription(e.target.value)} className={`border rounded p-2 w-full h-full ${isPast ? 'bg-neutral-300' : isPresent ? 'bg-red-400' : 'bg-green-400'}`} />
+          <textarea placeholder="Enter event..." value={eventDescription} onChange={(e) => setEventDescription(e.target.value)} className={`border rounded p-2 w-full h-full ${timeBlockColor}`} />
         ) : (
           <div className="m-2 h-full" onClick={() => setIsEditing(true)}>{eventDescription}</div>
         )}
