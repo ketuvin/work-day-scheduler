@@ -1,4 +1,4 @@
-![localhost_3000-GoogleChrome2024-01-1102-17-23-ezgif com-optimize](https://github.com/ketuvin/work-day-scheduler/assets/33052653/5929786e-d5e0-47bf-b8dd-8d7183b24f65)# Work Day Scheduler App
+# Work Day Scheduler App
 
 This is a simple work day scheduler app built with Next.js, TypeScript, TailwindCSS and Zustand. This app is developed with mobile responsiveness in mind, ensuring an optimal and user-friendly experience across a variety of screen sizes.
 
