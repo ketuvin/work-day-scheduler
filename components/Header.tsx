@@ -6,7 +6,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const updateDateTime = () => {
-      setCurrentDateTime(dayjs().format('MMMM D, YYYY h:mm A'));
+      setCurrentDateTime(dayjs().format('dddd, MMMM D, YYYY h:mm A'));
     };
 
     // Update the date and time every second
