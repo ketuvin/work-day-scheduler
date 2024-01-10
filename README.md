@@ -6,7 +6,7 @@ This is a simple work day scheduler app built with Next.js, TypeScript, Tailwind
 
 Make sure you have Node.js and npm installed on your machine.
 
-- Node.js: [Download Node.js](https://nodejs.org/)
+- Node.js: [Download Node.js](https://nodejs.org/) (Must be 18.x up)
 - npm: [Download npm](https://www.npmjs.com/get-npm)
 
 ## Installation
